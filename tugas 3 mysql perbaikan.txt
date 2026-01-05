@@ -1,0 +1,26 @@
+CREATE DATABASE pemesanan_lapangan;
+USE pemesanan_lapangan;
+
+CREATE TABLE lapangan (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nama_lapangan VARCHAR(100),
+jenis_rumput VARCHAR(50),
+harga_per_jam INT
+);
+
+CREATE TABLE bookings (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nama_penyewa VARCHAR(100),
+tanggal DATE,
+jam VARCHAR(20),
+status_pembayaran VARCHAR(20) -- 'Lunas' atau 'Belum Lunas'
+);
+
+-- Data Contoh
+INSERT INTO lapangan (nama_lapangan, jenis_rumput, harga_per_jam) VALUES
+('Futsal A', 'Sintetis', 150000),
+('Futsal B', 'Matras', 120000);
+
+INSERT INTO bookings (nama_penyewa, tanggal, jam, status_pembayaran) VALUES
+('Budi', '2026-01-05', '19:00 - 20:00', 'Lunas'),
+('Andi', '2026-01-06', '20:00 - 21:00', 'Belum Lunas');
